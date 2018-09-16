@@ -1,10 +1,12 @@
 {
-  "name": "restructure",
-  "version": "0.5.4",
-  "description": "Declaratively encode and decode binary data",
+  "name": "oni-restructure",
+  "version": "0.0.1",
+  "description": "Declaratively encode and decode binary data - Customized for the Oni editor",
   "main": "index.js",
   "dependencies": {
-    "browserify-optional": "^1.0.0"
+    "browserify-optional": "^1.0.0",
+    "lodash.get": "^4.4.2",
+    "lodash.set": "^4.3.2"
   },
   "devDependencies": {
     "chai": "~1.9.1",
@@ -30,7 +32,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/devongovett/restructure.git"
+    "url": "git://github.com/Cryza/oni-restructure.git"
   },
   "keywords": [
     "binary",
@@ -39,9 +41,12 @@
     "decode"
   ],
   "author": "Devon Govett <devongovett@gmail.com>",
+  "contributors": [
+    "Manuel Hornung <manuel@hornung.in>"
+  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/devongovett/restructure/issues"
+    "url": "https://github.com/Cryza/restructure/issues"
   },
-  "homepage": "https://github.com/devongovett/restructure"
+  "homepage": "https://github.com/Cryza/restructure#readme"
 }

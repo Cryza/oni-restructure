@@ -1,10 +1,12 @@
+get = require 'lodash.get'
+set = require 'lodash.set'
 Struct = require './Struct'
 
 class VersionedStruct extends Struct
   constructor: (@type, @versions = {}) ->
     if typeof @type is 'string'
-      @versionGetter = new Function('parent', "return parent.#{@type}")
-      @versionSetter = new Function('parent', 'version', "return parent.#{@type} = version")
+      @versionGetter = (parent) -> get(parent, @type)
+      @versionSetter = (parent, version) -> set(parent, @type, version)
 
   decode: (stream, parent, length = 0) ->
     res = @_setup stream, parent, length
@@ -32,7 +34,7 @@ class VersionedStruct extends Struct
   size: (val, parent, includePointers = true) ->
     unless val
       throw new Error 'Not a fixed size'
-    
+
     ctx =
       parent: parent
       val: val
